@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/frameNative"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <View
+                android:id="@+id/media_view_shimmer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/size_40"
+                android:layout_marginBottom="@dimen/size_130"
+                android:layout_marginStart="@dimen/size_16"
+                android:layout_marginEnd="@dimen/size_16"
+                android:background="@drawable/gnt_shape_shimmer"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <RelativeLayout
+                android:id="@+id/header_shimmer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/cta_shimmer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/media_view_shimmer">
+                <View
+                    android:id="@+id/icon_shimmer"
+                    android:background="@drawable/gnt_shape_shimmer"
+                    android:layout_width="@dimen/size_44"
+                    android:layout_height="@dimen/size_44"
+                    android:layout_marginStart="@dimen/size_16"/>
+                <View
+                    android:id="@+id/primary_shimmer"
+                    android:background="@drawable/gnt_shape_shimmer"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_20"
+                    android:layout_marginStart="@dimen/size_12"
+                    android:layout_marginEnd="@dimen/size_120"
+                    android:layout_toEndOf="@+id/icon_shimmer" />
+                <View
+                    android:id="@+id/body_shimmer"
+                    android:background="@drawable/gnt_shape_shimmer"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_20"
+                    android:layout_marginTop="@dimen/size_4"
+                    android:layout_below="@+id/primary_shimmer"
+                    android:layout_marginStart="@dimen/size_12"
+                    android:layout_marginEnd="@dimen/size_40"
+                    android:layout_toEndOf="@+id/icon_shimmer"/>
+            </RelativeLayout>
+            <View
+                android:id="@+id/cta_shimmer"
+                android:background="@drawable/gnt_shape_shimmer"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_40"
+                android:layout_marginStart="@dimen/size_16"
+                android:layout_marginEnd="@dimen/size_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/header_shimmer"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+    <com.nad.multiads.view.TemplateNativeView
+        android:id="@+id/admob_native_ad_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:gnt_template_type="@layout/gnt_full_template"
+        android:visibility="gone"/>
+
+    <com.facebook.ads.NativeAdLayout
+        android:id="@+id/fanNativeAdContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/applovinMaxContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+
+</FrameLayout>

@@ -1,0 +1,37 @@
+# Android Studio
+*.iml
+.idea/
+.gradle
+local.properties
+.DS_Store
+
+# Specific .idea subfolders/files to ignore (optional if you ignore all .idea/)
+.idea/caches
+.idea/libraries
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+
+# Build and intermediary files
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# macOS
+*.DS_Store
+
+# Windows thumbnail cache files
+Thumbs.db
+ehthumbs.db
+
+# Gradle Wrapper logs
+gradle-wrapper.properties.lock
+
+# Sign/key files
+*.jks
+*.keystore
+
+# Others (optional safety)
+*.log

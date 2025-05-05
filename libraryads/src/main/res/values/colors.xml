@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="gnt_bg_ad_yellow">#eebf58</color>
+    <color name="gnt_cta_button_color">#eebf58</color>
+    <color name="gnt_bg_native">#ffffff</color>
+    <color name="gnt_white">#ffffff</color>
+    <color name="gnt_white_20">#33ffffff</color>
+    <color name="gnt_white_30">#4dffffff</color>
+    <color name="gnt_white_50">#80ffffff</color>
+    <color name="gnt_black">#000000</color>
+    <color name="gnt_default_dark">#000000</color>
+    <color name="gnt_default_light">#FFFFFF</color>
+    <color name="gnt_bg_dark">#000000</color>
+    <color name="gnt_black_50">#80000000</color>
+    <color name="gnt_dark">#191920</color>
+    <color name="gnt_light">#FFFFFF</color>
+    <color name="gnt_gray">#ABABAB</color>
+    <color name="gnt_headline_color">#fff</color>
+    <color name="gnt_outline">#e0e0e0</color>
+    <color name="gnt_txt_btn_accent">#ffffff</color>
+    <color name="gnt_btn_accent">#54ccbf</color>
+    <color name="gnt_text_ad_black">#201f21</color>
+    <color name="gnt_black_20">#33000000</color>
+
+    <array name="indicator_colors">
+        <item>@color/gnt_btn_accent</item>
+        <item>@color/gnt_default_dark</item>
+        <item>@color/gnt_btn_accent</item>
+    </array>
+</resources>

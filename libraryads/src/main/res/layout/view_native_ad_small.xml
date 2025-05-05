@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/frameNative"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/size_8">
+
+            <!-- Shimmer Icon -->
+            <View
+                android:layout_width="@dimen/size_60"
+                android:layout_height="@dimen/size_60"
+                android:background="@drawable/gnt_shape_shimmer" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/size_8"
+                android:paddingEnd="@dimen/size_8">
+
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <View
+                        android:layout_width="@dimen/size_26"
+                        android:layout_height="@dimen/size_26"
+                        android:background="@drawable/gnt_shape_shimmer" />
+
+                    <!-- Shimmer Primary Text -->
+                    <View
+                        android:layout_marginStart="@dimen/size_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size_16"
+                        android:background="@drawable/gnt_shape_shimmer" />
+
+                </LinearLayout>
+                <!-- Shimmer Body Text -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_12"
+                    android:layout_marginTop="@dimen/size_4"
+                    android:background="@drawable/gnt_shape_shimmer" />
+            </LinearLayout>
+
+            <View
+                android:layout_marginBottom="@dimen/size_10"
+                android:layout_width="@dimen/size_60"
+                android:layout_height="@dimen/size_30"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/gnt_shape_shimmer" />
+
+
+
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <com.nad.multiads.view.TemplateNativeView
+        android:id="@+id/admob_native_ad_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:gnt_template_type="@layout/gnt_small_template"
+        android:visibility="gone"/>
+
+    <com.facebook.ads.NativeAdLayout
+        android:id="@+id/fanNativeAdContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/applovinMaxContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+</FrameLayout>

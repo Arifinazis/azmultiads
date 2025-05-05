@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.nad.multiads.view.AdsFrameLayout
+            android:id="@+id/media_view_container"
+            app:adsCornerRadius="@dimen/size_4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <LinearLayout
+            android:id="@+id/ad_options_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/size_3"
+            android:gravity="end"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/size_12"
+            android:layout_marginBottom="@dimen/size_10"
+            app:layout_constraintBottom_toTopOf="@+id/cta_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/icon_image_view"
+                android:layout_width="@dimen/size_44"
+                android:layout_height="@dimen/size_44"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/size_4"
+                android:layout_marginTop="@dimen/size_1"
+                android:scaleType="fitCenter"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/gnt_roundedImageView4" />
+
+            <TextView
+                android:id="@+id/ad_notification_view"
+                android:layout_width="@dimen/size_24"
+                android:layout_height="@dimen/size_18"
+                android:layout_marginStart="@dimen/size_12"
+                android:layout_marginTop="@dimen/size_2"
+                android:layout_toEndOf="@+id/icon_image_view"
+                android:background="@drawable/gnt_bg_indicator_default"
+                android:gravity="center"
+                android:text="@string/label_ads"
+                android:textColor="@color/gnt_white"
+                android:textSize="@dimen/text_12"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/icon_image_view"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/advertiser_textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_4"
+                android:layout_marginEnd="@dimen/size_8"
+                android:layout_toEndOf="@+id/ad_notification_view"
+                android:maxLines="1"
+                android:textColor="@color/gnt_text_ad_black"
+                android:textSize="@dimen/size_15"
+                android:text="@string/label_advertiser"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ad_notification_view"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/title_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_12"
+                android:layout_marginTop="@dimen/size_2"
+                android:layout_marginEnd="@dimen/size_8"
+                android:layout_toEndOf="@+id/ad_notification_view"
+                android:maxLines="1"
+                android:textColor="@color/gnt_text_ad_black"
+                android:textSize="@dimen/text_12"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/icon_image_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ad_notification_view" />
+            <TextView
+                android:id="@+id/body_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_12"
+                android:layout_marginTop="@dimen/size_2"
+                android:layout_marginEnd="@dimen/size_8"
+                android:layout_toEndOf="@+id/ad_notification_view"
+                android:maxLines="1"
+                android:textColor="@color/gnt_text_ad_black"
+                android:textSize="@dimen/text_12"
+                app:layout_constraintStart_toEndOf="@+id/icon_image_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title_text_view" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cta_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_36"
+            android:layout_marginHorizontal="@dimen/size_16"
+            android:layout_marginBottom="@dimen/size_10"
+            android:background="@drawable/gnt_bg_cta_button"
+            android:backgroundTint="@color/gnt_btn_accent"
+            android:gravity="center"
+            android:lines="1"
+            android:textColor="@color/gnt_txt_btn_accent"
+            android:textSize="@dimen/text_16"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

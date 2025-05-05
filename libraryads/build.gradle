@@ -1,0 +1,80 @@
+plugins {
+    alias(libs.plugins.android.library)
+    id 'maven-publish'
+}
+
+android {
+    namespace 'com.nad.multiads'
+    compileSdk 36
+
+    defaultConfig {
+        minSdk 24
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    buildFeatures {
+        buildConfig = true
+    }
+    lint {
+        lintConfig file('lint.xml')
+        warningsAsErrors true
+        checkReleaseBuilds true
+    }
+
+    tasks.withType(JavaCompile).configureEach {
+        options.compilerArgs << "-Xlint:deprecation"
+    }
+}
+publishing {
+    publications {
+        create("release", MavenPublication) {
+            afterEvaluate {
+                from components.findByName("release")
+            }
+            groupId = 'com.github.Arifinazis'
+            artifactId = 'azmultiads'
+            version = '1.0.0'
+        }
+    }
+}
+
+dependencies {
+
+    implementation libs.appcompat
+    implementation libs.material
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+
+
+    // Custom dimens library
+    implementation 'com.github.Arifinazis:naddimens:v1.0.0'
+    // Ads SDK
+    implementation 'com.applovin:applovin-sdk:13.2.0'
+    implementation 'com.google.android.gms:play-services-ads:24.2.0'
+    implementation 'com.facebook.android:audience-network-sdk:6.19.0'
+    implementation 'com.facebook.infer.annotation:infer-annotation:0.18.0'
+
+    //AdMob mediation
+    implementation 'com.google.ads.mediation:applovin:13.2.0.1'
+    implementation 'com.google.ads.mediation:facebook:6.19.0.1'
+    //Applovin mediation
+    implementation 'com.applovin.mediation:google-ad-manager-adapter:23.6.0.2'
+    implementation 'com.applovin.mediation:google-adapter:24.1.0.0'
+    implementation 'com.applovin.mediation:facebook-adapter:6.19.0.2'
+
+    // Shimmer
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+}
