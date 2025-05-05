@@ -17,7 +17,27 @@ Modular Ads Manager untuk Android yang mendukung **AdMob**, **AppLovin**, dan **
 - 📦 Cocok digunakan di `Activity`, `Fragment`, `Adapter`, atau `Custom View`
 
 ---
+## 📦 Integrasi
 
+Tambahkan repository JitPack di `settings.gradle` project kamu:
+
+```gradle
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+
+Lalu tambahkan dependency di `build.gradle` aplikasi:
+
+```gradle
+dependencies {
+   implementation 'com.github.Arifinazis:azmultiads:1.0.0'
+}
+```
 ## 🧩 Cara Penggunaan
 
 ### 1. Inisialisasi Konfigurasi Iklan
